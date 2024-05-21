@@ -1,0 +1,336 @@
+// Grid
+//--------------------------------------------------
+.pxl-grid {
+    .pxl-grid-masonry {
+        position: relative;
+    }
+    .grid-sizer {
+        z-index: -1;
+    }
+    .pxl-load-more {
+        text-align: center;        
+        margin-top: 84px;
+        .btn {
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 34px;
+            letter-spacing: 0.08px;
+            color: #fff;
+            border-radius: 10px;
+            background: transparent;
+            width: 100%;
+            border: 1px solid #fff;
+            justify-content: center;
+            z-index: 1;
+            padding: 14px 40px 16px 36px;
+            &:after {
+                content: none;
+            }
+            .pxl-load-icon {
+                opacity: 0;
+            }
+        }
+        &.loading {
+            .btn {
+                padding: 14px 40px 16px 36px;                
+                color: $primary_color;
+                &:before {
+                    width: 100%;
+                }
+                .button-arrow-hover {
+                    opacity: 0;
+                }
+                .pxl-load-icon {
+                    opacity: 1;
+                    color: $primary_color;
+                    i {
+                        animation: pxl_spin 0.6s infinite linear;
+                        -webkit-animation: pxl_spin 0.6s infinite linear;
+                    }
+                }
+            }
+        }
+    }
+    @media #{$min-xl} {
+        .col-xl-pxl5 {
+            -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+    }
+}
+
+.pxl-grid-filter1 {
+    margin-bottom: 126px;
+    @media (max-width: 1200px) {
+        margin-bottom: 60px;        
+    }
+    @media #{$max-sm} {
+        margin-bottom: 40px;
+    }
+    .filter-item {
+        font-family: Quicksand;
+        color: #000;
+        font-weight: 700;
+        display: inline-flex;
+        padding: 0px;
+        font-size: 20px;
+        line-height: 30px;
+        cursor: pointer;
+        position: relative;        
+        + .filter-item {
+            margin-left: 40px;
+            @media #{$max-lg} {
+                margin-left: 20px;
+            }
+        }
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+        @extend .ft-theme-default;
+        justify-content: center;
+        @include border-radius(0px);
+        @media #{$max-lg} {
+            line-height: 42px;
+            padding: 0 18px;
+        }
+        &:last-child {
+            @media #{$max-lg} {
+                margin-right: 9px;
+            }
+            @media #{$max-sm} {
+                margin-right: 0;
+            }
+        }
+        &.active, &:hover {
+            background: linear-gradient(90deg, #FF7369 0%, #FFB06D 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .pxl--filter-inner {
+        background-color: #fff;
+        display: inline-block;
+        @media #{$max-sm} {
+            background-color: transparent;
+        }
+        @media #{$max-sm} {
+            @include box-shadow(none);
+        }
+    }
+}
+
+.elementor-editor-active .grid-sizer {
+    display: none;
+}
+
+// Elementor - Column Settings
+//--------------------------------------------------
+.pxl-col-align-start {
+    > .elementor-widget-wrap {
+        justify-content: flex-start;
+    }
+    .elementor-inner-section > .elementor-container {
+        margin-left: 0;
+    }
+}
+.pxl-col-align-center {
+    > .elementor-widget-wrap {
+        justify-content: center;
+    }
+}
+.pxl-col-align-end {
+    > .elementor-widget-wrap {
+        justify-content: flex-end;
+    }
+    .elementor-inner-section > .elementor-container {
+        margin-right: 0;
+    }
+}
+
+// Start Swiper Carousel
+//--------------------------------------------------
+.pxl-swiper-container {
+    margin: 0 -15px;
+    position: relative;
+    overflow: hidden;
+}
+.pxl-swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.pxl-swiper-slide {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0 15px;
+}
+
+.page {
+    #pxl-main {
+        >#primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 62px;
+    border-radius: 5px;
+    width: 50px;
+    height: 2px;
+    background: $primary_color;
+    transition: all 0.3s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.pxl-swiper-arrow {
+    font-size: 16px;
+    color: #000;
+    display: block;
+    z-index: 2;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+    opacity: 0;
+    visibility: hidden;
+    i {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &:hover {
+        color: $secondary_color;
+    }
+    &.swiper-button-disabled {
+        cursor: not-allowed;
+    }
+    &.pxl-swiper-arrow-prev {
+        left: -28px;
+        @media #{$max-lg} {
+            left: 30px;
+        }
+    }
+    &.pxl-swiper-arrow-next {
+        right: -28px;
+        @media #{$max-lg} {
+            right: 30px;
+        }
+    }
+    &.style2 {
+        background-color: #f1f1f3;
+        color: #fff;
+        @include box-shadow(none);
+        &:before {
+            z-index: -1;
+            @extend .pxl-spill;
+            @include border-radius(100%);
+            @include background-horizontal($gradient_color_from, $gradient_color_to);
+            opacity: 0;
+            @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+        }
+        &:hover {
+            background-color: #f1f1f3;
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.pxl-swiper-dots {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    .pxl-swiper-pagination-bullet {
+        margin: 0 12px;
+        width: 8px;
+        height: 8px;
+        text-align: center;
+        background: #cacaca;
+        cursor: pointer;
+        position: relative;
+        @include border-radius(8px);
+        @include transition(all .25s cubic-bezier(.645,.045,.355,1));
+        &:hover,
+        &.swiper-pagination-bullet-active {
+            background: $primary_color;
+        }
+    }
+}
+.pxl-swiper-boxshadow {
+    .pxl-carousel-inner {
+        margin: 0 -30px;
+        .pxl-swiper-container {
+            padding: 0 30px;
+        }
+    }
+    .pxl-swiper-slide {
+        @include transition(opacity 300ms ease);
+    }
+    .pxl-swiper-slide:not(.swiper-slide-visible) {
+        opacity: 0;
+    }
+}
+
+.pxl-swiper-sliders {
+    position: relative;
+    &:hover {
+        .pxl-swiper-arrow {
+            @media (min-width: 991px) {
+                opacity: 1;
+                visibility: visible;                
+            }
+        }
+    }
+    &.pxl-swiper-arrow-show .pxl-swiper-arrow {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.pxl-swiper-nogap {
+    .pxl-swiper-container {
+        margin: 0;
+        .pxl-swiper-slide {
+            padding: 0;
+        }
+    }
+}
+
+.pxl-swiper-thumbs {
+    overflow: hidden;
+    .swiper-slide {
+        cursor: pointer;
+    }
+}
+// End Swiper Carousel
+//--------------------------------------------------

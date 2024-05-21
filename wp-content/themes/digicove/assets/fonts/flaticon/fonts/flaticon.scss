@@ -1,0 +1,65 @@
+$flaticon_digicove-font: "flaticon_digicove";
+
+@font-face {
+    font-family: $flaticon_digicove-font;
+    src: url("./flaticon_digicove.ttf?aba0bc9d2c717664ba94952c462a705d") format("truetype"),
+url("./flaticon_digicove.woff?aba0bc9d2c717664ba94952c462a705d") format("woff"),
+url("./flaticon_digicove.woff2?aba0bc9d2c717664ba94952c462a705d") format("woff2"),
+url("./flaticon_digicove.eot?aba0bc9d2c717664ba94952c462a705d#iefix") format("embedded-opentype"),
+url("./flaticon_digicove.svg?aba0bc9d2c717664ba94952c462a705d#flaticon_digicove") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_digicove !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_digicove-map: (
+    "puzzle": "\f101",
+    "trust": "\f102",
+    "target": "\f103",
+    "digital-strategy": "\f104",
+    "management": "\f105",
+    "research": "\f106",
+    "email": "\f107",
+    "live": "\f108",
+    "sms": "\f109",
+    "star": "\f10a",
+);
+
+.flaticon-puzzle:before {
+    content: map-get($flaticon_digicove-map, "puzzle");
+}
+.flaticon-trust:before {
+    content: map-get($flaticon_digicove-map, "trust");
+}
+.flaticon-target:before {
+    content: map-get($flaticon_digicove-map, "target");
+}
+.flaticon-digital-strategy:before {
+    content: map-get($flaticon_digicove-map, "digital-strategy");
+}
+.flaticon-management:before {
+    content: map-get($flaticon_digicove-map, "management");
+}
+.flaticon-research:before {
+    content: map-get($flaticon_digicove-map, "research");
+}
+.flaticon-email:before {
+    content: map-get($flaticon_digicove-map, "email");
+}
+.flaticon-live:before {
+    content: map-get($flaticon_digicove-map, "live");
+}
+.flaticon-sms:before {
+    content: map-get($flaticon_digicove-map, "sms");
+}
+.flaticon-star:before {
+    content: map-get($flaticon_digicove-map, "star");
+}
