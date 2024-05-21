@@ -28,3 +28,4 @@
 [2024-05-21 15:44:02] merlin-logger.DEBUG: A plugin with the following data will be processed {"plugin_slug":"wpc-ajax-add-to-cart","message":"Activating"} []
 [2024-05-21 15:45:02] merlin-logger.DEBUG: A plugin with the following data was processed {"plugin_slug":"wpc-ajax-add-to-cart"} []
 [2024-05-21 15:45:18] merlin-logger.DEBUG: The content import step has been displayed [] []
+[2024-05-21 16:09:14] merlin-logger.DEBUG: The final step has been displayed [] []
